@@ -38,7 +38,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(61, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(614, 610);
+            pictureBox1.Size = new Size(800, 800);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -47,7 +47,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1358, 606);
+            ClientSize = new Size(1099, 826);
             Controls.Add(pictureBox1);
             Name = "Form1";
             Text = "Form1";
