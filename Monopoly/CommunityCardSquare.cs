@@ -9,8 +9,11 @@ namespace Monopoly
     internal class CommunityCardSquare : CardSquare
     {
         static Card[] communitycards = new Card[1];
+        
+        
         public override void SquareEffect(Player player, Random random)
         {
+           
             communitycards[random.Next(communitycards.Length)].CardEffect(player);
         }
     }

@@ -11,5 +11,12 @@ namespace Monopoly
         public int money;
         List<Property> properties;
         public int location;
+
+        public Player()
+        {
+            money = 0;
+            properties = new List<Property>();
+            location = 0;
+        }
     }
 }
