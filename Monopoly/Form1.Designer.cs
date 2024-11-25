@@ -32,7 +32,10 @@
             pictureBox1 = new PictureBox();
             RollDiceButton = new Button();
             EndTurnButton = new Button();
+            label1 = new Label();
+            ShoePiece = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ShoePiece).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -56,19 +59,41 @@
             // 
             // EndTurnButton
             // 
-            EndTurnButton.Location = new Point(1066, 64);
+            EndTurnButton.Location = new Point(980, 21);
             EndTurnButton.Name = "EndTurnButton";
-            EndTurnButton.Size = new Size(75, 23);
+            EndTurnButton.Size = new Size(77, 23);
             EndTurnButton.TabIndex = 2;
             EndTurnButton.Text = "End turn";
             EndTurnButton.UseVisualStyleBackColor = true;
-          
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 3;
+            label1.Text = "label1";
+            // 
+            // ShoePiece
+            // 
+            ShoePiece.BackColor = Color.Transparent;
+            ShoePiece.Image = (Image)resources.GetObject("ShoePiece.Image");
+            ShoePiece.InitialImage = (Image)resources.GetObject("ShoePiece.InitialImage");
+            ShoePiece.Location = new Point(123, 64);
+            ShoePiece.Name = "ShoePiece";
+            ShoePiece.Size = new Size(36, 29);
+            ShoePiece.SizeMode = PictureBoxSizeMode.StretchImage;
+            ShoePiece.TabIndex = 4;
+            ShoePiece.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1412, 826);
+            Controls.Add(ShoePiece);
+            Controls.Add(label1);
             Controls.Add(EndTurnButton);
             Controls.Add(RollDiceButton);
             Controls.Add(pictureBox1);
@@ -76,7 +101,9 @@
             Text = "Form1";
             Load += Form1_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ShoePiece).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -84,5 +111,7 @@
         private PictureBox pictureBox1;
         private Button RollDiceButton;
         private Button EndTurnButton;
+        private Label label1;
+        private PictureBox ShoePiece;
     }
 }

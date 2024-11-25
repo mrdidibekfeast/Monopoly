@@ -12,6 +12,7 @@ namespace Monopoly
         Player[] players;
         int currentPlayerIndex;
         Random rand;
+        
         public Board(Random rand,int amountofplayers)
         {
             this.rand = rand;
@@ -21,6 +22,7 @@ namespace Monopoly
                 players[i] = new Player();
             }
             currentPlayerIndex = 0;
+            Squares = [new PropertySquare(),new CommunityCardSquare(),new ChanceCardSquare()];
         }
         public void MovePlayer()
         {
@@ -33,8 +35,9 @@ namespace Monopoly
             {
                 total -= 40;
             }
-
-            players[currentPlayerIndex].location = total;
+            players[currentPlayerIndex].location++;
+            //players[currentPlayerIndex].location = total;
+            ;
         }
         public void EndTurn()
         {
@@ -45,6 +48,21 @@ namespace Monopoly
             }
 
             currentPlayerIndex++;
+        }
+        public void movePiece(List<PictureBox> pieces)
+        {
+            if (players[currentPlayerIndex].location<=10)
+            {
+                pieces[currentPlayerIndex].Location = new Point(770 - players[currentPlayerIndex].location * 65, 700);
+            }
+            else if (players[currentPlayerIndex].location <= 20)
+            {
+                pieces[currentPlayerIndex].Location = new Point(125  , 700 - (players[currentPlayerIndex].location-10) * 65);
+            }
+            else if (players[currentPlayerIndex].location <= 30)
+            {
+                pieces[currentPlayerIndex].Location = new Point(125 + (players[currentPlayerIndex].location - 20) * 65, 65);
+            }
         }
     }
 }
