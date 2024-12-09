@@ -16,8 +16,11 @@ namespace Monopoly
         private void Form1_Load_1(object sender, EventArgs e)
         {
             pieces = new List<PictureBox>();
-            board = new Board(new Random(10), 5);
+            board = new Board(new Random(10), BoardConstants.PlayerCount);
             pieces.Add(ShoePiece);
+            pieces.Add(RaceCarPiece);
+            pieces.Add(TexPiece);
+            pieces.Add(WheelBarrowPiece);
             RollDiceButton.Click += RollDice;
             EndTurnButton.Click += EndTurn;
             EndTurnButton.Enabled = false;
@@ -26,7 +29,7 @@ namespace Monopoly
         {
             board.MovePlayer();
             EndTurnButton.Enabled = true;
-            //RollDiceButton.Enabled = false;
+            RollDiceButton.Enabled = false;
             board.movePiece(pieces);
         }
         private void EndTurn(object sender, EventArgs e)
