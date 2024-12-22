@@ -22,7 +22,13 @@ namespace Monopoly
                 players[i] = new Player();
             }
             currentPlayerIndex = 0;
-            Squares = [new PropertySquare(), new CommunityCardSquare(), new ChanceCardSquare()];
+            Squares = new Square[40];
+            Squares[1] = new PropertySquare(new Property("Old Kent Rd", 60, 5, 0, BoardConstants.PropertyColors.Brown));
+            Squares[3] = new PropertySquare(new Property("Whitechapel Rd", 60, 5, 0, BoardConstants.PropertyColors.Brown));
+            Squares[6] = new PropertySquare(new Property("The Angel Islington", 100, 5, 0, BoardConstants.PropertyColors.BabyBlue));
+            Squares[8] = new PropertySquare(new Property("Euston", 100, 10, 0, BoardConstants.PropertyColors.BabyBlue));
+            Squares[9] = new PropertySquare(new Property("Pentonville", 120, 10, 0, BoardConstants.PropertyColors.BabyBlue));
+
         }
         public void MovePlayer()
         {

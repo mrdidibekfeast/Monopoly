@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
+    
     public static class BoardConstants
     {
         //Board Movement
@@ -22,6 +23,20 @@ namespace Monopoly
 
         //Setup
         public const int PlayerCount = 4;
+
+
+        //properties
+        public enum PropertyColors
+        {
+            Brown,
+            BabyBlue,
+            Magenta,
+            Orange,
+            Red,
+            Yellow,
+            Green,
+            DarkBlue
+        }
         
     }
 }

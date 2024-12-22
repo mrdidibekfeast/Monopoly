@@ -15,6 +15,7 @@ namespace Monopoly
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
+           
             pieces = new List<PictureBox>();
             board = new Board(new Random(10), BoardConstants.PlayerCount);
             pieces.Add(ShoePiece);

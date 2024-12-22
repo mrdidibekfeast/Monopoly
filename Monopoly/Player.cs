@@ -9,7 +9,7 @@ namespace Monopoly
     internal class Player
     {
         public int money;
-        List<Property> properties;
+        public List<Property> properties;
         public int location;
 
         public Player()
