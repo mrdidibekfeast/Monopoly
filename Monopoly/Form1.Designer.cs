@@ -37,26 +37,26 @@
             TexPiece = new PictureBox();
             WheelBarrowPiece = new PictureBox();
             RaceCarPiece = new PictureBox();
-            panel1 = new Panel();
+            infoPanel = new Panel();
+            sellButton = new Button();
+            buyButton = new Button();
+            rentCostBox = new TextBox();
+            priceBox = new TextBox();
+            colorBox = new TextBox();
+            nameBox = new TextBox();
+            rentCostText = new Label();
+            priceText = new Label();
+            colorText = new Label();
+            nameText = new Label();
+            ownerNameText = new Label();
             ownedByText = new Label();
             label2 = new Label();
-            ownerNameText = new Label();
-            nameText = new Label();
-            colorText = new Label();
-            priceText = new Label();
-            rentCostText = new Label();
-            nameBox = new TextBox();
-            colorBox = new TextBox();
-            priceBox = new TextBox();
-            rentCostBox = new TextBox();
-            buyButton = new Button();
-            sellButton = new Button();
             ((System.ComponentModel.ISupportInitialize)MonopolyBoard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ShoePiece).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TexPiece).BeginInit();
             ((System.ComponentModel.ISupportInitialize)WheelBarrowPiece).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RaceCarPiece).BeginInit();
-            panel1.SuspendLayout();
+            infoPanel.SuspendLayout();
             SuspendLayout();
             // 
             // MonopolyBoard
@@ -80,7 +80,7 @@
             // 
             // EndTurnButton
             // 
-            EndTurnButton.Location = new Point(980, 21);
+            EndTurnButton.Location = new Point(1123, 21);
             EndTurnButton.Name = "EndTurnButton";
             EndTurnButton.Size = new Size(77, 23);
             EndTurnButton.TabIndex = 2;
@@ -144,26 +144,129 @@
             RaceCarPiece.TabIndex = 7;
             RaceCarPiece.TabStop = false;
             // 
-            // panel1
+            // infoPanel
             // 
-            panel1.BackColor = Color.OldLace;
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(sellButton);
-            panel1.Controls.Add(buyButton);
-            panel1.Controls.Add(rentCostBox);
-            panel1.Controls.Add(priceBox);
-            panel1.Controls.Add(colorBox);
-            panel1.Controls.Add(nameBox);
-            panel1.Controls.Add(rentCostText);
-            panel1.Controls.Add(priceText);
-            panel1.Controls.Add(colorText);
-            panel1.Controls.Add(nameText);
-            panel1.Controls.Add(ownerNameText);
-            panel1.Controls.Add(ownedByText);
-            panel1.Location = new Point(899, 72);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(301, 353);
-            panel1.TabIndex = 8;
+            infoPanel.BackColor = Color.OldLace;
+            infoPanel.BorderStyle = BorderStyle.Fixed3D;
+            infoPanel.Controls.Add(sellButton);
+            infoPanel.Controls.Add(buyButton);
+            infoPanel.Controls.Add(rentCostBox);
+            infoPanel.Controls.Add(priceBox);
+            infoPanel.Controls.Add(colorBox);
+            infoPanel.Controls.Add(nameBox);
+            infoPanel.Controls.Add(rentCostText);
+            infoPanel.Controls.Add(priceText);
+            infoPanel.Controls.Add(colorText);
+            infoPanel.Controls.Add(nameText);
+            infoPanel.Controls.Add(ownerNameText);
+            infoPanel.Controls.Add(ownedByText);
+            infoPanel.Location = new Point(899, 72);
+            infoPanel.Name = "infoPanel";
+            infoPanel.Size = new Size(301, 353);
+            infoPanel.TabIndex = 8;
+            // 
+            // sellButton
+            // 
+            sellButton.BackColor = Color.Red;
+            sellButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            sellButton.Location = new Point(155, 278);
+            sellButton.Name = "sellButton";
+            sellButton.Size = new Size(75, 23);
+            sellButton.TabIndex = 11;
+            sellButton.Text = "SELL";
+            sellButton.UseVisualStyleBackColor = false;
+            // 
+            // buyButton
+            // 
+            buyButton.BackColor = Color.Lime;
+            buyButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buyButton.Location = new Point(55, 278);
+            buyButton.Name = "buyButton";
+            buyButton.Size = new Size(75, 23);
+            buyButton.TabIndex = 10;
+            buyButton.Text = "BUY";
+            buyButton.UseVisualStyleBackColor = false;
+            // 
+            // rentCostBox
+            // 
+            rentCostBox.Location = new Point(130, 202);
+            rentCostBox.Name = "rentCostBox";
+            rentCostBox.ReadOnly = true;
+            rentCostBox.Size = new Size(128, 23);
+            rentCostBox.TabIndex = 9;
+            // 
+            // priceBox
+            // 
+            priceBox.Location = new Point(130, 161);
+            priceBox.Name = "priceBox";
+            priceBox.ReadOnly = true;
+            priceBox.Size = new Size(128, 23);
+            priceBox.TabIndex = 8;
+            // 
+            // colorBox
+            // 
+            colorBox.Location = new Point(130, 126);
+            colorBox.Name = "colorBox";
+            colorBox.ReadOnly = true;
+            colorBox.Size = new Size(128, 23);
+            colorBox.TabIndex = 7;
+            // 
+            // nameBox
+            // 
+            nameBox.Location = new Point(130, 90);
+            nameBox.Name = "nameBox";
+            nameBox.ReadOnly = true;
+            nameBox.Size = new Size(128, 23);
+            nameBox.TabIndex = 6;
+            // 
+            // rentCostText
+            // 
+            rentCostText.AutoSize = true;
+            rentCostText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rentCostText.Location = new Point(45, 205);
+            rentCostText.Name = "rentCostText";
+            rentCostText.Size = new Size(69, 15);
+            rentCostText.TabIndex = 5;
+            rentCostText.Text = "Rent Cost:";
+            // 
+            // priceText
+            // 
+            priceText.AutoSize = true;
+            priceText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            priceText.Location = new Point(67, 164);
+            priceText.Name = "priceText";
+            priceText.Size = new Size(41, 15);
+            priceText.TabIndex = 4;
+            priceText.Text = "Price:";
+            // 
+            // colorText
+            // 
+            colorText.AutoSize = true;
+            colorText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            colorText.Location = new Point(67, 129);
+            colorText.Name = "colorText";
+            colorText.Size = new Size(47, 15);
+            colorText.TabIndex = 3;
+            colorText.Text = "Color: ";
+            // 
+            // nameText
+            // 
+            nameText.AutoSize = true;
+            nameText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nameText.Location = new Point(67, 93);
+            nameText.Name = "nameText";
+            nameText.Size = new Size(49, 15);
+            nameText.TabIndex = 2;
+            nameText.Text = "Name: ";
+            // 
+            // ownerNameText
+            // 
+            ownerNameText.AutoSize = true;
+            ownerNameText.Location = new Point(155, 23);
+            ownerNameText.Name = "ownerNameText";
+            ownerNameText.Size = new Size(50, 15);
+            ownerNameText.TabIndex = 1;
+            ownerNameText.Text = "Nobody";
             // 
             // ownedByText
             // 
@@ -184,116 +287,13 @@
             label2.TabIndex = 9;
             label2.Text = "label2";
             // 
-            // ownerNameText
-            // 
-            ownerNameText.AutoSize = true;
-            ownerNameText.Location = new Point(161, 23);
-            ownerNameText.Name = "ownerNameText";
-            ownerNameText.Size = new Size(50, 15);
-            ownerNameText.TabIndex = 1;
-            ownerNameText.Text = "Nobody";
-            // 
-            // nameText
-            // 
-            nameText.AutoSize = true;
-            nameText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nameText.Location = new Point(67, 93);
-            nameText.Name = "nameText";
-            nameText.Size = new Size(49, 15);
-            nameText.TabIndex = 2;
-            nameText.Text = "Name: ";
-            // 
-            // colorText
-            // 
-            colorText.AutoSize = true;
-            colorText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            colorText.Location = new Point(67, 129);
-            colorText.Name = "colorText";
-            colorText.Size = new Size(47, 15);
-            colorText.TabIndex = 3;
-            colorText.Text = "Color: ";
-            // 
-            // priceText
-            // 
-            priceText.AutoSize = true;
-            priceText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            priceText.Location = new Point(67, 164);
-            priceText.Name = "priceText";
-            priceText.Size = new Size(41, 15);
-            priceText.TabIndex = 4;
-            priceText.Text = "Price:";
-            // 
-            // rentCostText
-            // 
-            rentCostText.AutoSize = true;
-            rentCostText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rentCostText.Location = new Point(45, 205);
-            rentCostText.Name = "rentCostText";
-            rentCostText.Size = new Size(69, 15);
-            rentCostText.TabIndex = 5;
-            rentCostText.Text = "Rent Cost:";
-            // 
-            // nameBox
-            // 
-            nameBox.Location = new Point(130, 90);
-            nameBox.Name = "nameBox";
-            nameBox.ReadOnly = true;
-            nameBox.Size = new Size(100, 23);
-            nameBox.TabIndex = 6;
-            // 
-            // colorBox
-            // 
-            colorBox.Location = new Point(130, 127);
-            colorBox.Name = "colorBox";
-            colorBox.ReadOnly = true;
-            colorBox.Size = new Size(100, 23);
-            colorBox.TabIndex = 7;
-            // 
-            // priceBox
-            // 
-            priceBox.Location = new Point(130, 161);
-            priceBox.Name = "priceBox";
-            priceBox.ReadOnly = true;
-            priceBox.Size = new Size(100, 23);
-            priceBox.TabIndex = 8;
-            // 
-            // rentCostBox
-            // 
-            rentCostBox.Location = new Point(130, 202);
-            rentCostBox.Name = "rentCostBox";
-            rentCostBox.ReadOnly = true;
-            rentCostBox.Size = new Size(100, 23);
-            rentCostBox.TabIndex = 9;
-            // 
-            // buyButton
-            // 
-            buyButton.BackColor = Color.Lime;
-            buyButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buyButton.Location = new Point(55, 278);
-            buyButton.Name = "buyButton";
-            buyButton.Size = new Size(75, 23);
-            buyButton.TabIndex = 10;
-            buyButton.Text = "BUY";
-            buyButton.UseVisualStyleBackColor = false;
-            // 
-            // sellButton
-            // 
-            sellButton.BackColor = Color.Red;
-            sellButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            sellButton.Location = new Point(155, 278);
-            sellButton.Name = "sellButton";
-            sellButton.Size = new Size(75, 23);
-            sellButton.TabIndex = 11;
-            sellButton.Text = "SELL";
-            sellButton.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1633, 826);
             Controls.Add(label2);
-            Controls.Add(panel1);
+            Controls.Add(infoPanel);
             Controls.Add(RaceCarPiece);
             Controls.Add(WheelBarrowPiece);
             Controls.Add(TexPiece);
@@ -310,8 +310,8 @@
             ((System.ComponentModel.ISupportInitialize)TexPiece).EndInit();
             ((System.ComponentModel.ISupportInitialize)WheelBarrowPiece).EndInit();
             ((System.ComponentModel.ISupportInitialize)RaceCarPiece).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            infoPanel.ResumeLayout(false);
+            infoPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -326,7 +326,7 @@
         private PictureBox TexPiece;
         private PictureBox WheelBarrowPiece;
         private PictureBox RaceCarPiece;
-        private Panel panel1;
+        private Panel infoPanel;
         private Label ownerNameText;
         private Label ownedByText;
         private Label label2;

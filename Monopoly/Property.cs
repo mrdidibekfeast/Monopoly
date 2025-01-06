@@ -11,7 +11,7 @@ namespace Monopoly
         public string name;
         public int price;
         public int rentCost;
-        private int houseFactor;
+        public int houseFactor;
         public BoardConstants.PropertyColors color;
         public Player owner; 
 

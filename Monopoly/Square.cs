@@ -8,7 +8,7 @@ namespace Monopoly
 {
     abstract class Square
     {
-        public string name;
+        public string Name;
 
 
         public abstract void SquareEffect(Player player,Random rand);

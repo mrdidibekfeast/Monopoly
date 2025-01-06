@@ -12,8 +12,8 @@ namespace Monopoly
         Player[] players;
         int currentPlayerIndex;
         Random rand;
-
-        public Board(Random rand, int amountofplayers)
+        Panel infoPanel;
+        public Board(Random rand, int amountofplayers, Panel infoPanel)
         {
             this.rand = rand;
             players = new Player[amountofplayers];
@@ -23,11 +23,18 @@ namespace Monopoly
             }
             currentPlayerIndex = 0;
             Squares = new Square[40];
-            Squares[1] = new PropertySquare(new Property("Old Kent Rd", 60, 5, 0, BoardConstants.PropertyColors.Brown));
-            Squares[3] = new PropertySquare(new Property("Whitechapel Rd", 60, 5, 0, BoardConstants.PropertyColors.Brown));
-            Squares[6] = new PropertySquare(new Property("The Angel Islington", 100, 5, 0, BoardConstants.PropertyColors.BabyBlue));
-            Squares[8] = new PropertySquare(new Property("Euston", 100, 10, 0, BoardConstants.PropertyColors.BabyBlue));
-            Squares[9] = new PropertySquare(new Property("Pentonville", 120, 10, 0, BoardConstants.PropertyColors.BabyBlue));
+            Squares[1] = new PropertySquare(new Property("Old Kent Rd", 60, 2, 0, BoardConstants.PropertyColors.Brown), infoPanel);
+            Squares[3] = new PropertySquare(new Property("Whitechapel Rd", 60, 4, 0, BoardConstants.PropertyColors.Brown), infoPanel);
+            Squares[6] = new PropertySquare(new Property("The Angel Islington", 100, 6, 0, BoardConstants.PropertyColors.BabyBlue), infoPanel);
+            Squares[8] = new PropertySquare(new Property("Euston", 100, 6, 0, BoardConstants.PropertyColors.BabyBlue), infoPanel);
+            Squares[9] = new PropertySquare(new Property("Pentonville", 120, 8, 0, BoardConstants.PropertyColors.BabyBlue), infoPanel);
+            Squares[11] = new PropertySquare(new Property("Pall Mall",140, 10, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
+            Squares[13] = new PropertySquare(new Property("White Hall", 140, 10, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
+            Squares[14] = new PropertySquare(new Property("Northumrl'd", 160, 12, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
+            Squares[16] = new PropertySquare(new Property("Bow",180,16,0,BoardConstants.PropertyColors.Orange), infoPanel);
+            Squares[18] = new PropertySquare(new Property("Marlborough", 180, 20, 0, BoardConstants.PropertyColors.Orange), infoPanel);
+            Squares[19] = new PropertySquare(new Property("Vine", 200, 20, 0, BoardConstants.PropertyColors.Orange), infoPanel);
+
 
         }
         public void MovePlayer()
@@ -54,6 +61,7 @@ namespace Monopoly
             }
 
             currentPlayerIndex++;
+            //infoPanel.Visible = false;
         }
         public void movePiece(List<PictureBox> pieces)
         {
@@ -75,5 +83,6 @@ namespace Monopoly
                 pieces[currentPlayerIndex].Location = new Point(BoardConstants.RightScreen, BoardConstants.TopScreen + (players[currentPlayerIndex].location - BoardConstants.GoToJailIndex) * BoardConstants.JumpValue);
             }
         }
+     
     }
 }
