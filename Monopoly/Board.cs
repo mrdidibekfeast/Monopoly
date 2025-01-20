@@ -31,10 +31,20 @@ namespace Monopoly
             Squares[11] = new PropertySquare(new Property("Pall Mall",140, 10, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
             Squares[13] = new PropertySquare(new Property("White Hall", 140, 10, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
             Squares[14] = new PropertySquare(new Property("Northumrl'd", 160, 12, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
-            Squares[16] = new PropertySquare(new Property("Bow",180,16,0,BoardConstants.PropertyColors.Orange), infoPanel);
-            Squares[18] = new PropertySquare(new Property("Marlborough", 180, 20, 0, BoardConstants.PropertyColors.Orange), infoPanel);
-            Squares[19] = new PropertySquare(new Property("Vine", 200, 20, 0, BoardConstants.PropertyColors.Orange), infoPanel);
-
+            Squares[16] = new PropertySquare(new Property("Bow",180,14,0,BoardConstants.PropertyColors.Orange), infoPanel);
+            Squares[18] = new PropertySquare(new Property("Marlborough", 180, 14, 0, BoardConstants.PropertyColors.Orange), infoPanel);
+            Squares[19] = new PropertySquare(new Property("Vine", 200, 16, 0, BoardConstants.PropertyColors.Orange), infoPanel);
+            Squares[21] = new PropertySquare(new Property("Strand",220,18,0,BoardConstants.PropertyColors.Red), infoPanel);
+            Squares[23] = new PropertySquare(new Property("Fleet", 220, 18,0,BoardConstants.PropertyColors.Red), infoPanel);
+            Squares[24] = new PropertySquare(new Property("Trafalgar Square", 240, 20,0,BoardConstants.PropertyColors.Red), infoPanel);
+            Squares[26] = new PropertySquare(new Property("Leicester Square", 260, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel);
+            Squares[27] = new PropertySquare(new Property("Coventry Street", 260, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel);
+            Squares[29] = new PropertySquare(new Property("Piccadilly", 280, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel);
+            Squares[31] = new PropertySquare(new Property("Regent Street", 300,26,0, BoardConstants.PropertyColors.Green), infoPanel);
+            Squares[32] = new PropertySquare(new Property("Oxford Street", 300, 26, 0, BoardConstants.PropertyColors.Green), infoPanel);
+            Squares[34] = new PropertySquare(new Property("Bond Street", 320, 28, 0,BoardConstants.PropertyColors.Green),infoPanel);
+            Squares[37] = new PropertySquare(new Property("Park Lane", 350,35,0,BoardConstants.PropertyColors.DarkBlue), infoPanel);
+            Squares[39] = new PropertySquare(new Property("Mayfair", 400,50,0,BoardConstants.PropertyColors.DarkBlue), infoPanel);
 
         }
         public void MovePlayer()
