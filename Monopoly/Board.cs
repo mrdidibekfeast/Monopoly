@@ -9,20 +9,25 @@ namespace Monopoly
     internal class Board
     {
         Square[] Squares;
-        Player[] players;
-        int currentPlayerIndex;
-        Random rand;
-        Panel infoPanel;
-        public Board(Random rand, int amountofplayers, Panel infoPanel)
+        public Player[] players;
+        public int currentPlayer; 
+        public Random rand;
+        readonly Panel infoPanel;
+        List<PictureBox> pieces;
+        public Board(Random rand, int amountofplayers, Panel infoPanel, List<PictureBox> pieces)
         {
+            pieces = new List<PictureBox>();
+            this.pieces = pieces;
+
             this.rand = rand;
             players = new Player[amountofplayers];
             for (int i = 0; i < players.Length; i++)
             {
                 players[i] = new Player();
             }
-            currentPlayerIndex = 0;
+            currentPlayer = 0;
             Squares = new Square[40];
+            Squares[0] = new GoSquare();
             Squares[1] = new PropertySquare(new Property("Old Kent Rd", 60, 2, 0, BoardConstants.PropertyColors.Brown), infoPanel);
             Squares[3] = new PropertySquare(new Property("Whitechapel Rd", 60, 4, 0, BoardConstants.PropertyColors.Brown), infoPanel);
             Squares[6] = new PropertySquare(new Property("The Angel Islington", 100, 6, 0, BoardConstants.PropertyColors.BabyBlue), infoPanel);
@@ -47,52 +52,49 @@ namespace Monopoly
             Squares[39] = new PropertySquare(new Property("Mayfair", 400,50,0,BoardConstants.PropertyColors.DarkBlue), infoPanel);
 
         }
-        public void MovePlayer()
+        public void MovePlayer(int numberOfSpaces)
         {
-            int dice1 = rand.Next(1, 7);
-            int dice2 = rand.Next(1, 7);
-
-            int total = players[currentPlayerIndex].location + dice1 + dice2;
-
+            int total = numberOfSpaces + players[currentPlayer].location;
             if (total > 39)
             {
                 total -= 40;
+                players[currentPlayer].money += 200;
             }
             
-            players[currentPlayerIndex].location = total;
+
+            players[currentPlayer].location = total;
             //Squares[players[currentPlayerIndex].location].SquareEffect(players[currentPlayerIndex], rand);
-        }
-        public void EndTurn()
-        {
-            if (currentPlayerIndex == players.Length - 1)
-            {
-                currentPlayerIndex = 0;
-                return;
-            }
 
-            currentPlayerIndex++;
-            //infoPanel.Visible = false;
-        }
-        public void movePiece(List<PictureBox> pieces)
-        {
-            if (players[currentPlayerIndex].location <= BoardConstants.JailIndex)
+            if (players[currentPlayer].location <= BoardConstants.JailIndex)
             {
-                pieces[currentPlayerIndex].Location = new Point(BoardConstants.RightScreen - (players[currentPlayerIndex].location * BoardConstants.JumpValue), BoardConstants.BottomScreen);
+                pieces[currentPlayer].Location = new Point(BoardConstants.RightScreen - (players[currentPlayer].location * BoardConstants.JumpValue), BoardConstants.BottomScreen);
             }
-            else if (players[currentPlayerIndex].location <= BoardConstants.ParkingIndex)
+            else if (players[currentPlayer].location <= BoardConstants.ParkingIndex)
             {
-                pieces[currentPlayerIndex].Location = new Point(BoardConstants.LeftScreen, BoardConstants.BottomScreen - (players[currentPlayerIndex].location - BoardConstants.JailIndex) * BoardConstants.JumpValue);
+                pieces[currentPlayer].Location = new Point(BoardConstants.LeftScreen, BoardConstants.BottomScreen - (players[currentPlayer].location - BoardConstants.JailIndex) * BoardConstants.JumpValue);
             }
-            else if (players[currentPlayerIndex].location <= BoardConstants.GoToJailIndex)
+            else if (players[currentPlayer].location <= BoardConstants.GoToJailIndex)
             {
 
-                pieces[currentPlayerIndex].Location = new Point(BoardConstants.LeftScreen + (players[currentPlayerIndex].location - BoardConstants.ParkingIndex) * BoardConstants.JumpValue, BoardConstants.TopScreen);
+                pieces[currentPlayer].Location = new Point(BoardConstants.LeftScreen + (players[currentPlayer].location - BoardConstants.ParkingIndex) * BoardConstants.JumpValue, BoardConstants.TopScreen);
             }
             else
             {
-                pieces[currentPlayerIndex].Location = new Point(BoardConstants.RightScreen, BoardConstants.TopScreen + (players[currentPlayerIndex].location - BoardConstants.GoToJailIndex) * BoardConstants.JumpValue);
+                pieces[currentPlayer].Location = new Point(BoardConstants.RightScreen, BoardConstants.TopScreen + (players[currentPlayer].location - BoardConstants.GoToJailIndex) * BoardConstants.JumpValue);
             }
         }
+        public void EndTurn()
+        {
+            if (currentPlayer == players.Length - 1)
+            {
+                currentPlayer = 0;
+                return;
+            }
+
+            currentPlayer++;
+            //infoPanel.Visible = false;
+        }
+       
      
     }
 }

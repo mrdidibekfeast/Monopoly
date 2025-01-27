@@ -8,16 +8,23 @@ namespace Monopoly
 {
     internal class MovementCard : Card
     {
-        private int space;
+        private Board board;
+        private string name;
+        private string description;
+        private int index;
 
-        public MovementCard(string name, int space) : base(name)
+        public MovementCard(string name, string description,int index,Board board) : base(name)
         {
-
+            this.name = name;
+            this.description = description;
+            this.index = index;
+            this.board = board;
         }
 
         public override void CardEffect(Player player)
         {
-            player.location = space;
+            
+            board.MovePlayer();
         }
     }
 }

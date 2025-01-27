@@ -17,6 +17,7 @@ namespace Monopoly
             money = 0;
             properties = new List<Property>();
             location = 0;
+            
         }
     }
 }

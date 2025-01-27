@@ -233,7 +233,7 @@
             // 
             priceText.AutoSize = true;
             priceText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            priceText.Location = new Point(67, 164);
+            priceText.Location = new Point(45, 164);
             priceText.Name = "priceText";
             priceText.Size = new Size(41, 15);
             priceText.TabIndex = 4;
@@ -243,7 +243,7 @@
             // 
             colorText.AutoSize = true;
             colorText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            colorText.Location = new Point(67, 129);
+            colorText.Location = new Point(45, 129);
             colorText.Name = "colorText";
             colorText.Size = new Size(47, 15);
             colorText.TabIndex = 3;
@@ -253,7 +253,7 @@
             // 
             nameText.AutoSize = true;
             nameText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            nameText.Location = new Point(67, 93);
+            nameText.Location = new Point(45, 93);
             nameText.Name = "nameText";
             nameText.Size = new Size(49, 15);
             nameText.TabIndex = 2;

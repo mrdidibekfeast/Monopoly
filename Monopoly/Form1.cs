@@ -5,7 +5,6 @@ namespace Monopoly
     public partial class Form1 : Form
     {
         Board board;
-        List<PictureBox> pieces;
         public Form1()
         {
             InitializeComponent();
@@ -15,13 +14,13 @@ namespace Monopoly
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-           
-            pieces = new List<PictureBox>();
-            board = new Board(new Random(10), BoardConstants.PlayerCount,infoPanel);
+            List<PictureBox> pieces = new List<PictureBox>();
             pieces.Add(ShoePiece);
             pieces.Add(RaceCarPiece);
             pieces.Add(TexPiece);
             pieces.Add(WheelBarrowPiece);
+            board = new Board(new Random(10), BoardConstants.PlayerCount,infoPanel,pieces);
+
             RollDiceButton.Click += RollDice;
             EndTurnButton.Click += EndTurn;
             EndTurnButton.Enabled = false;
@@ -29,10 +28,13 @@ namespace Monopoly
         }
         private void RollDice(object sender, EventArgs e)
         {
-            board.MovePlayer();
+            int dice1 = board.rand.Next(1, 7);
+            int dice2 = board.rand.Next(1, 7);
+            int total =  dice1 + dice2;
+            board.MovePlayer(total);
+
             EndTurnButton.Enabled = true;
             RollDiceButton.Enabled = false;
-            board.movePiece(pieces);
 
         }
         private void EndTurn(object sender, EventArgs e)
