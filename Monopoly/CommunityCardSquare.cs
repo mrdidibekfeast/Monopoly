@@ -11,10 +11,10 @@ namespace Monopoly
         static Card[] communitycards = new Card[1];
         
         
-        public override void SquareEffect(Player player, Random random)
+        public override void SquareEffect(Player player,Board board, Random random)
         {
            
-            communitycards[random.Next(communitycards.Length)].CardEffect(player);
+            communitycards[random.Next(communitycards.Length)].CardEffect(player,board);
         }
     }
 }

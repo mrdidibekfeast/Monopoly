@@ -8,7 +8,7 @@ namespace Monopoly
 {
     internal class GoSquare : Square 
     {
-        public override void SquareEffect(Player player, Random rand)
+        public override void SquareEffect(Player player,Board board, Random rand)
         {
             
         }

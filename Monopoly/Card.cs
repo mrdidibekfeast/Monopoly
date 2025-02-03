@@ -16,6 +16,6 @@ namespace Monopoly
             this.name = name;
         }
         
-        public abstract void CardEffect(Player player);
+        public abstract void CardEffect(Player player,Board board);
     }
 }

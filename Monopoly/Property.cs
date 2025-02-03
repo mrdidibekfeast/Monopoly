@@ -13,7 +13,8 @@ namespace Monopoly
         public int rentCost;
         public int houseFactor;
         public BoardConstants.PropertyColors color;
-        public Player owner; 
+        public Player owner;
+        public int numberOfHouses;
 
         public Property(string name, int price, int rentCost, int houseFactor, BoardConstants.PropertyColors color)
         {
@@ -22,10 +23,13 @@ namespace Monopoly
             this.rentCost = rentCost;
             this.houseFactor = houseFactor;
             this.color = color;
-
+            numberOfHouses = 0;
             owner = null;
         }
 
-
+        public int GetRent()
+        {
+            return rentCost + (houseFactor * numberOfHouses);
+        }
     }
 }

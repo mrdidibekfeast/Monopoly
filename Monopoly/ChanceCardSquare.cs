@@ -14,9 +14,9 @@ namespace Monopoly
         new MovementCard("Go to Jail",BoardConstants.JailIndex)];
 
 
-        public override void SquareEffect(Player player,Random random)
+        public override void SquareEffect(Player player,Board board,Random random)
         {
-            chancecards[random.Next(chancecards.Length)].CardEffect(player);
+            chancecards[random.Next(chancecards.Length)].CardEffect(player,board);
         }
     }
 }

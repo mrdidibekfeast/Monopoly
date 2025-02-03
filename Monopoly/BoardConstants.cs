@@ -35,7 +35,8 @@ namespace Monopoly
             Red,
             Yellow,
             Green,
-            DarkBlue
+            DarkBlue,
+            Railroad
         }
         
     }

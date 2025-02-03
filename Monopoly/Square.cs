@@ -11,6 +11,6 @@ namespace Monopoly
         public string Name;
 
 
-        public abstract void SquareEffect(Player player,Random rand);
+        public abstract void SquareEffect(Player player,Board board,Random rand);
     }
 }

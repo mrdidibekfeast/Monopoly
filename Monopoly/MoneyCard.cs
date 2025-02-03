@@ -14,7 +14,7 @@ namespace Monopoly
 
         }
 
-        public override void CardEffect(Player player)
+        public override void CardEffect(Player player,Board board)
         {
             player.money += amount;
         }

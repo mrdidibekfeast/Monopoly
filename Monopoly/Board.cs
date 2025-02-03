@@ -16,7 +16,7 @@ namespace Monopoly
         List<PictureBox> pieces;
         public Board(Random rand, int amountofplayers, Panel infoPanel, List<PictureBox> pieces)
         {
-            pieces = new List<PictureBox>();
+            
             this.pieces = pieces;
 
             this.rand = rand;

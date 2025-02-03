@@ -17,7 +17,7 @@ namespace Monopoly
             this.property = property;
         }
         
-        public override void SquareEffect(Player player, Random rand)
+        public override void SquareEffect(Player player,Board board, Random rand)
         {
             if (property.owner == null)
             {
@@ -28,8 +28,8 @@ namespace Monopoly
                 if(!player.properties.Contains(property))
                 {
                     //charge
-                    player.money -= property.rentCost;
-                    property.owner.money += property.rentCost;
+                    player.money -= property.GetRent();
+                    property.owner.money += property.GetRent();
                 }
             }
         }
