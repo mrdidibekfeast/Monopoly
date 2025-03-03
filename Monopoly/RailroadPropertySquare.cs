@@ -31,7 +31,7 @@ namespace Monopoly
                         count++;
                     }
                 }
-                int rentprice = (int)(25 * (Math.Pow(2,count-1)));
+                int rentprice = (int)(property.rentCost * (Math.Pow(2,count-1)));
 
                 player.money -= rentprice;
                 property.owner.money += rentprice;

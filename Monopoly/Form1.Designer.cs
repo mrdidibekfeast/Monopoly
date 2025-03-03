@@ -160,7 +160,7 @@
             infoPanel.Controls.Add(nameText);
             infoPanel.Controls.Add(ownerNameText);
             infoPanel.Controls.Add(ownedByText);
-            infoPanel.Location = new Point(899, 72);
+            infoPanel.Location = new Point(899, 50);
             infoPanel.Name = "infoPanel";
             infoPanel.Size = new Size(301, 353);
             infoPanel.TabIndex = 8;
