@@ -9,7 +9,7 @@ namespace Monopoly
         {
             InitializeComponent();
         }
-       
+
 
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -19,7 +19,7 @@ namespace Monopoly
             pieces.Add(RaceCarPiece);
             pieces.Add(TexPiece);
             pieces.Add(WheelBarrowPiece);
-            board = new Board(new Random(10), BoardConstants.PlayerCount,infoPanel,pieces);
+            board = new Board(new Random(10), BoardConstants.PlayerCount, infoPanel, pieces);
 
             RollDiceButton.Click += RollDice;
             EndTurnButton.Click += EndTurn;
@@ -30,11 +30,13 @@ namespace Monopoly
         {
             int dice1 = board.rand.Next(1, 7);
             int dice2 = board.rand.Next(1, 7);
-            int total =  dice1 + dice2;
+            int total = dice1 + dice2;
             board.MovePlayer(total);
 
             EndTurnButton.Enabled = true;
             RollDiceButton.Enabled = false;
+
+            //jail check in here
 
         }
         private void EndTurn(object sender, EventArgs e)
@@ -44,6 +46,6 @@ namespace Monopoly
             RollDiceButton.Enabled = true;
         }
 
-
+       
     }
 }

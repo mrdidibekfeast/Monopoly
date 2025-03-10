@@ -35,6 +35,7 @@ namespace Monopoly
             Squares[6] = new PropertySquare(new Property("The Angel Islington", 100, 6, 0, BoardConstants.PropertyColors.BabyBlue), infoPanel);
             Squares[8] = new PropertySquare(new Property("Euston", 100, 6, 0, BoardConstants.PropertyColors.BabyBlue), infoPanel);
             Squares[9] = new PropertySquare(new Property("Pentonville", 120, 8, 0, BoardConstants.PropertyColors.BabyBlue), infoPanel);
+            //Squares[10]
             Squares[11] = new PropertySquare(new Property("Pall Mall",140, 10, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
             Squares[13] = new PropertySquare(new Property("White Hall", 140, 10, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
             Squares[14] = new PropertySquare(new Property("Northumrl'd", 160, 12, 0, BoardConstants.PropertyColors.Magenta), infoPanel);
@@ -42,6 +43,7 @@ namespace Monopoly
             Squares[16] = new PropertySquare(new Property("Bow",180,14,0,BoardConstants.PropertyColors.Orange), infoPanel);
             Squares[18] = new PropertySquare(new Property("Marlborough", 180, 14, 0, BoardConstants.PropertyColors.Orange), infoPanel);
             Squares[19] = new PropertySquare(new Property("Vine", 200, 16, 0, BoardConstants.PropertyColors.Orange), infoPanel);
+            Squares[20] = new FreeParkingSquare();
             Squares[21] = new PropertySquare(new Property("Strand",220,18,0,BoardConstants.PropertyColors.Red), infoPanel);
             Squares[23] = new PropertySquare(new Property("Fleet", 220, 18,0,BoardConstants.PropertyColors.Red), infoPanel);
             Squares[24] = new PropertySquare(new Property("Trafalgar Square", 240, 20,0,BoardConstants.PropertyColors.Red), infoPanel);
@@ -49,6 +51,7 @@ namespace Monopoly
             Squares[26] = new PropertySquare(new Property("Leicester Square", 260, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel);
             Squares[27] = new PropertySquare(new Property("Coventry Street", 260, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel);
             Squares[29] = new PropertySquare(new Property("Piccadilly", 280, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel);
+            //Squares[30]
             Squares[31] = new PropertySquare(new Property("Regent Street", 300,26,0, BoardConstants.PropertyColors.Green), infoPanel);
             Squares[32] = new PropertySquare(new Property("Oxford Street", 300, 26, 0, BoardConstants.PropertyColors.Green), infoPanel);
             Squares[34] = new PropertySquare(new Property("Bond Street", 320, 28, 0,BoardConstants.PropertyColors.Green),infoPanel);
@@ -57,6 +60,24 @@ namespace Monopoly
             Squares[38] = new TaxSquare("Super tax", 100);
             Squares[39] = new PropertySquare(new Property("Mayfair", 400,50,0,BoardConstants.PropertyColors.DarkBlue), infoPanel);
 
+        }
+        public void SetPlayerLocation(int index)
+        {
+            int startingIndex = players[currentPlayer].location;
+            int endingIndex = index;
+            int numberOfSpacesToMove = 0;
+            if(startingIndex < endingIndex)
+            {
+                numberOfSpacesToMove = endingIndex - startingIndex;
+                MovePlayer(numberOfSpacesToMove);
+            }
+            else if(startingIndex > endingIndex)
+            {
+                endingIndex += 40;
+                numberOfSpacesToMove = endingIndex - startingIndex;
+                MovePlayer(numberOfSpacesToMove);
+            }
+            
         }
         public void MovePlayer(int numberOfSpaces)
         {

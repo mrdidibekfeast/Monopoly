@@ -32,7 +32,6 @@
             MonopolyBoard = new PictureBox();
             RollDiceButton = new Button();
             EndTurnButton = new Button();
-            label1 = new Label();
             ShoePiece = new PictureBox();
             TexPiece = new PictureBox();
             WheelBarrowPiece = new PictureBox();
@@ -50,7 +49,7 @@
             nameText = new Label();
             ownerNameText = new Label();
             ownedByText = new Label();
-            label2 = new Label();
+            playerPanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)MonopolyBoard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ShoePiece).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TexPiece).BeginInit();
@@ -80,21 +79,12 @@
             // 
             // EndTurnButton
             // 
-            EndTurnButton.Location = new Point(1123, 21);
+            EndTurnButton.Location = new Point(992, 21);
             EndTurnButton.Name = "EndTurnButton";
             EndTurnButton.Size = new Size(77, 23);
             EndTurnButton.TabIndex = 2;
             EndTurnButton.Text = "End turn";
             EndTurnButton.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 3;
-            label1.Text = "label1";
             // 
             // ShoePiece
             // 
@@ -146,7 +136,7 @@
             // 
             // infoPanel
             // 
-            infoPanel.BackColor = Color.OldLace;
+            infoPanel.BackColor = Color.White;
             infoPanel.BorderStyle = BorderStyle.Fixed3D;
             infoPanel.Controls.Add(sellButton);
             infoPanel.Controls.Add(buyButton);
@@ -160,7 +150,7 @@
             infoPanel.Controls.Add(nameText);
             infoPanel.Controls.Add(ownerNameText);
             infoPanel.Controls.Add(ownedByText);
-            infoPanel.Location = new Point(899, 50);
+            infoPanel.Location = new Point(1225, 69);
             infoPanel.Name = "infoPanel";
             infoPanel.Size = new Size(301, 353);
             infoPanel.TabIndex = 8;
@@ -278,27 +268,25 @@
             ownedByText.TabIndex = 0;
             ownedByText.Text = "Owned By: ";
             // 
-            // label2
+            // playerPanel
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 9;
-            label2.Text = "label2";
+            playerPanel.BackColor = SystemColors.Window;
+            playerPanel.Location = new Point(881, 69);
+            playerPanel.Name = "playerPanel";
+            playerPanel.Size = new Size(301, 353);
+            playerPanel.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1633, 826);
-            Controls.Add(label2);
+            Controls.Add(playerPanel);
             Controls.Add(infoPanel);
             Controls.Add(RaceCarPiece);
             Controls.Add(WheelBarrowPiece);
             Controls.Add(TexPiece);
             Controls.Add(ShoePiece);
-            Controls.Add(label1);
             Controls.Add(EndTurnButton);
             Controls.Add(RollDiceButton);
             Controls.Add(MonopolyBoard);
@@ -313,7 +301,6 @@
             infoPanel.ResumeLayout(false);
             infoPanel.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -321,7 +308,6 @@
         private PictureBox MonopolyBoard;
         private Button RollDiceButton;
         private Button EndTurnButton;
-        private Label label1;
         private PictureBox ShoePiece;
         private PictureBox TexPiece;
         private PictureBox WheelBarrowPiece;
@@ -329,7 +315,6 @@
         private Panel infoPanel;
         private Label ownerNameText;
         private Label ownedByText;
-        private Label label2;
         private Label nameText;
         private TextBox rentCostBox;
         private TextBox priceBox;
@@ -340,5 +325,6 @@
         private Label colorText;
         private Button sellButton;
         private Button buyButton;
+        private Panel playerPanel;
     }
 }
