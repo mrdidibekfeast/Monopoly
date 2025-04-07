@@ -8,7 +8,7 @@ namespace Monopoly
 {
     internal class CommunityCardSquare : CardSquare
     {
-        static Card[] communitycards = new Card[1];
+        static Card[] communitycards = {new MoneyCard("Gain 500", 500) };
         
         
         public override void SquareEffect(Player player,Board board, Random random)

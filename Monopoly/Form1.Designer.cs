@@ -37,6 +37,7 @@
             WheelBarrowPiece = new PictureBox();
             RaceCarPiece = new PictureBox();
             infoPanel = new Panel();
+            infoPanelLabel = new Label();
             sellButton = new Button();
             buyButton = new Button();
             rentCostBox = new TextBox();
@@ -47,15 +48,19 @@
             priceText = new Label();
             colorText = new Label();
             nameText = new Label();
-            ownerNameText = new Label();
-            ownedByText = new Label();
             playerPanel = new Panel();
+            propertiesBox = new ComboBox();
+            playerPanelText = new Label();
+            playerMoneyBox = new TextBox();
+            moneyText = new Label();
+            propertiesText = new Label();
             ((System.ComponentModel.ISupportInitialize)MonopolyBoard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ShoePiece).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TexPiece).BeginInit();
             ((System.ComponentModel.ISupportInitialize)WheelBarrowPiece).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RaceCarPiece).BeginInit();
             infoPanel.SuspendLayout();
+            playerPanel.SuspendLayout();
             SuspendLayout();
             // 
             // MonopolyBoard
@@ -138,6 +143,7 @@
             // 
             infoPanel.BackColor = Color.White;
             infoPanel.BorderStyle = BorderStyle.Fixed3D;
+            infoPanel.Controls.Add(infoPanelLabel);
             infoPanel.Controls.Add(sellButton);
             infoPanel.Controls.Add(buyButton);
             infoPanel.Controls.Add(rentCostBox);
@@ -148,12 +154,21 @@
             infoPanel.Controls.Add(priceText);
             infoPanel.Controls.Add(colorText);
             infoPanel.Controls.Add(nameText);
-            infoPanel.Controls.Add(ownerNameText);
-            infoPanel.Controls.Add(ownedByText);
-            infoPanel.Location = new Point(1225, 69);
+            infoPanel.Location = new Point(881, 428);
             infoPanel.Name = "infoPanel";
             infoPanel.Size = new Size(301, 353);
             infoPanel.TabIndex = 8;
+         
+            // 
+            // infoPanelLabel
+            // 
+            infoPanelLabel.AutoSize = true;
+            infoPanelLabel.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            infoPanelLabel.Location = new Point(109, 18);
+            infoPanelLabel.Name = "infoPanelLabel";
+            infoPanelLabel.Size = new Size(69, 15);
+            infoPanelLabel.TabIndex = 12;
+            infoPanelLabel.Text = "Info Panel";
             // 
             // sellButton
             // 
@@ -249,32 +264,64 @@
             nameText.TabIndex = 2;
             nameText.Text = "Name: ";
             // 
-            // ownerNameText
-            // 
-            ownerNameText.AutoSize = true;
-            ownerNameText.Location = new Point(155, 23);
-            ownerNameText.Name = "ownerNameText";
-            ownerNameText.Size = new Size(50, 15);
-            ownerNameText.TabIndex = 1;
-            ownerNameText.Text = "Nobody";
-            // 
-            // ownedByText
-            // 
-            ownedByText.AutoSize = true;
-            ownedByText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ownedByText.Location = new Point(81, 23);
-            ownedByText.Name = "ownedByText";
-            ownedByText.Size = new Size(74, 15);
-            ownedByText.TabIndex = 0;
-            ownedByText.Text = "Owned By: ";
-            // 
             // playerPanel
             // 
             playerPanel.BackColor = SystemColors.Window;
+            playerPanel.Controls.Add(propertiesBox);
+            playerPanel.Controls.Add(playerPanelText);
+            playerPanel.Controls.Add(playerMoneyBox);
+            playerPanel.Controls.Add(moneyText);
+            playerPanel.Controls.Add(propertiesText);
             playerPanel.Location = new Point(881, 69);
             playerPanel.Name = "playerPanel";
             playerPanel.Size = new Size(301, 353);
             playerPanel.TabIndex = 0;
+            // 
+            // propertiesBox
+            // 
+            propertiesBox.FormattingEnabled = true;
+            propertiesBox.Location = new Point(111, 115);
+            propertiesBox.Name = "propertiesBox";
+            propertiesBox.Size = new Size(128, 23);
+            propertiesBox.TabIndex = 17;
+            // 
+            // playerPanelText
+            // 
+            playerPanelText.AutoSize = true;
+            playerPanelText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            playerPanelText.Location = new Point(105, 26);
+            playerPanelText.Name = "playerPanelText";
+            playerPanelText.Size = new Size(82, 15);
+            playerPanelText.TabIndex = 12;
+            playerPanelText.Text = "Player Panel";
+            // 
+            // playerMoneyBox
+            // 
+            playerMoneyBox.Location = new Point(111, 79);
+            playerMoneyBox.Name = "playerMoneyBox";
+            playerMoneyBox.ReadOnly = true;
+            playerMoneyBox.Size = new Size(128, 23);
+            playerMoneyBox.TabIndex = 16;
+            // 
+            // moneyText
+            // 
+            moneyText.AutoSize = true;
+            moneyText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            moneyText.Location = new Point(26, 82);
+            moneyText.Name = "moneyText";
+            moneyText.Size = new Size(53, 15);
+            moneyText.TabIndex = 12;
+            moneyText.Text = "Money:";
+            // 
+            // propertiesText
+            // 
+            propertiesText.AutoSize = true;
+            propertiesText.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            propertiesText.Location = new Point(26, 118);
+            propertiesText.Name = "propertiesText";
+            propertiesText.Size = new Size(74, 15);
+            propertiesText.TabIndex = 13;
+            propertiesText.Text = "Properties:";
             // 
             // Form1
             // 
@@ -300,6 +347,8 @@
             ((System.ComponentModel.ISupportInitialize)RaceCarPiece).EndInit();
             infoPanel.ResumeLayout(false);
             infoPanel.PerformLayout();
+            playerPanel.ResumeLayout(false);
+            playerPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -313,8 +362,6 @@
         private PictureBox WheelBarrowPiece;
         private PictureBox RaceCarPiece;
         private Panel infoPanel;
-        private Label ownerNameText;
-        private Label ownedByText;
         private Label nameText;
         private TextBox rentCostBox;
         private TextBox priceBox;
@@ -326,5 +373,11 @@
         private Button sellButton;
         private Button buyButton;
         private Panel playerPanel;
+        private Label playerPanelText;
+        private TextBox playerMoneyBox;
+        private Label moneyText;
+        private Label propertiesText;
+        private ComboBox propertiesBox;
+        private Label infoPanelLabel;
     }
 }

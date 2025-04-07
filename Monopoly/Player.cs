@@ -15,7 +15,7 @@ namespace Monopoly
        
         public Player()
         {
-            money = 0;
+            money = 1500;
             properties = new List<Property>();
             location = 0;
             isInjail = false;

@@ -11,17 +11,27 @@ namespace Monopoly
     {
         public Property property;
         private readonly Panel infoPanel;
-        public PropertySquare(Property property, Panel infoPanel)
+        PropertyVisualizer textBoxes;
+
+        public PropertySquare(Property property, Panel infoPanel, PropertyVisualizer textBoxes)
         {
             this.infoPanel = infoPanel;
             this.property = property;
+            this.textBoxes = textBoxes;
         }
         
         public override void SquareEffect(Player player,Board board, Random rand)
         {
-            if (property.owner == null)
+            if (property.owner == null || property.owner == player)
             {
                 infoPanel.Visible = true;
+
+                textBoxes.propertyName.Text = property.name;
+                textBoxes.propertyColor.Text = property.color.ToString();
+                textBoxes.propertyPrice.Text = property.price.ToString();
+
+                textBoxes.propertyRentCost.Text = property.GetRent().ToString();
+              
             }
             else
             {

@@ -9,7 +9,7 @@ namespace Monopoly
     internal class RailroadPropertySquare : PropertySquare
     {
 
-        public RailroadPropertySquare(Property property, Panel infoPanel) : base(property, infoPanel)
+        public RailroadPropertySquare(Property property, Panel infoPanel, PropertyVisualizer pvis) : base(property, infoPanel, pvis)
         {
 
         }
@@ -37,6 +37,20 @@ namespace Monopoly
                 property.owner.money += rentprice;
             }
            
+        }
+
+        public int GetRent(Player player)
+        {
+            Player PropOwner = property.owner;
+            int count = 0;
+            foreach (var i in PropOwner.properties)
+            {
+                if (i.color == BoardConstants.PropertyColors.Railroad)
+                {
+                    count++;
+                }
+            }
+            return (int)(property.rentCost * (Math.Pow(2, count - 1)));
         }
     }
 }
