@@ -15,6 +15,7 @@ namespace Monopoly
         public BoardConstants.PropertyColors color;
         public Player owner;
         public int numberOfHouses;
+        
 
         public Property(string name, int price, int rentCost, int houseFactor, BoardConstants.PropertyColors color)
         {
@@ -30,6 +31,11 @@ namespace Monopoly
         public int GetRent()
         {
             return rentCost + (houseFactor * numberOfHouses);
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
     }
 }

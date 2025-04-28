@@ -22,7 +22,7 @@ namespace Monopoly
 
             PropertyVisualizer propvis = new PropertyVisualizer(nameBox, colorBox, priceBox, rentCostBox);
 
-            board = new Board(new Random(10), BoardConstants.PlayerCount, infoPanel, pieces,propvis);
+            board = new Board(new Random(10), BoardConstants.PlayerCount, infoPanel, pieces, propvis);
 
 
 
@@ -31,7 +31,7 @@ namespace Monopoly
             EndTurnButton.Enabled = false;
             infoPanel.Visible = false;
 
-            
+
             playerMoneyBox.Text = board.players[board.currentPlayer].money.ToString();
         }
         private void RollDice(object sender, EventArgs e)
@@ -62,9 +62,66 @@ namespace Monopoly
 
             propertiesBox.Items.Clear();
             propertiesBox.Items.AddRange(board.players[board.currentPlayer].properties.ToArray());
-            //ADD THIS FOR MONEYEYEYEYEYEYEYEYEYEYEYEYEYEYY
+
+            playerMoneyBox.Text = "";
+            playerMoneyBox.Text = board.players[board.currentPlayer].money.ToString();
+
+
+            buyButton.Enabled = true;
+            sellButton.Enabled = true;
         }
 
-        
+        private void buyButton_Click(object sender, EventArgs e)
+        {
+            
+
+            PropertySquare landedPropertySquare = (PropertySquare)board.Squares[board.players[board.currentPlayer].location];
+
+            if(landedPropertySquare.property.owner != null || board.players[board.currentPlayer].money < landedPropertySquare.property.price)
+            {
+                buyButton.Enabled = false;
+            }
+
+            board.players[board.currentPlayer].money -= landedPropertySquare.property.price;
+
+            board.players[board.currentPlayer].properties.Add(landedPropertySquare.property);
+
+            propertiesBox.Items.Clear();
+            propertiesBox.Items.AddRange(board.players[board.currentPlayer].properties.ToArray());
+
+            playerMoneyBox.Text = "";
+            playerMoneyBox.Text = board.players[board.currentPlayer].money.ToString();
+
+            buyButton.Enabled = false;
+            sellButton.Enabled = false;
+
+
+
+        }
+
+        private void sellButton_Click(object sender, EventArgs e)
+        {
+           
+
+            PropertySquare landedPropertySquare = (PropertySquare)board.Squares[board.players[board.currentPlayer].location];
+
+            if(landedPropertySquare.property.owner != board.players[board.currentPlayer])
+            {
+                sellButton.Enabled = false;
+            }
+
+            board.players[board.currentPlayer].money += landedPropertySquare.property.price;
+
+            board.players[board.currentPlayer].properties.Remove(landedPropertySquare.property);
+
+            propertiesBox.Items.Clear();
+            propertiesBox.Items.AddRange(board.players[board.currentPlayer].properties.ToArray());
+
+            playerMoneyBox.Text = "";
+            playerMoneyBox.Text = board.players[board.currentPlayer].money.ToString();
+
+            sellButton.Enabled = false;
+            buyButton.Enabled = false;
+        }
     }
 }

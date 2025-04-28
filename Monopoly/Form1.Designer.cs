@@ -158,7 +158,6 @@
             infoPanel.Name = "infoPanel";
             infoPanel.Size = new Size(301, 353);
             infoPanel.TabIndex = 8;
-         
             // 
             // infoPanelLabel
             // 
@@ -180,6 +179,7 @@
             sellButton.TabIndex = 11;
             sellButton.Text = "SELL";
             sellButton.UseVisualStyleBackColor = false;
+            sellButton.Click += sellButton_Click;
             // 
             // buyButton
             // 
@@ -191,6 +191,7 @@
             buyButton.TabIndex = 10;
             buyButton.Text = "BUY";
             buyButton.UseVisualStyleBackColor = false;
+            buyButton.Click += buyButton_Click;
             // 
             // rentCostBox
             // 

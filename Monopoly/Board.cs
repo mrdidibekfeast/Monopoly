@@ -42,6 +42,7 @@ namespace Monopoly
             Squares[9] = new PropertySquare(new Property("Pentonville", 120, 8, 0, BoardConstants.PropertyColors.BabyBlue), infoPanel, propvis);
             Squares[10] = new JailSquare();
             Squares[11] = new PropertySquare(new Property("Pall Mall",140, 10, 0, BoardConstants.PropertyColors.Magenta), infoPanel, propvis);
+            
             Squares[13] = new PropertySquare(new Property("White Hall", 140, 10, 0, BoardConstants.PropertyColors.Magenta), infoPanel, propvis);
             Squares[14] = new PropertySquare(new Property("Northumrl'd", 160, 12, 0, BoardConstants.PropertyColors.Magenta), infoPanel, propvis);
             Squares[15] = new RailroadPropertySquare(new Property("Marylebone Station",200,25, 0, BoardConstants.PropertyColors.Railroad),infoPanel, propvis);
@@ -57,6 +58,7 @@ namespace Monopoly
             Squares[25] = new RailroadPropertySquare(new Property("Fenchurch St. Station", 200, 25, 0, BoardConstants.PropertyColors.Railroad),infoPanel, propvis);
             Squares[26] = new PropertySquare(new Property("Leicester Square", 260, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel, propvis);
             Squares[27] = new PropertySquare(new Property("Coventry Street", 260, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel, propvis);
+
             Squares[29] = new PropertySquare(new Property("Piccadilly", 280, 22, 0, BoardConstants.PropertyColors.Yellow), infoPanel, propvis);
             Squares[30] = new GoToJailSquare();
             Squares[31] = new PropertySquare(new Property("Regent Street", 300,26,0, BoardConstants.PropertyColors.Green), infoPanel, propvis);

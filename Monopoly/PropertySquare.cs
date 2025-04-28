@@ -22,6 +22,7 @@ namespace Monopoly
         
         public override void SquareEffect(Player player,Board board, Random rand)
         {
+            
             if (property.owner == null || property.owner == player)
             {
                 infoPanel.Visible = true;
@@ -37,7 +38,6 @@ namespace Monopoly
             {
                 if(!player.properties.Contains(property))
                 {
-                    //charge
                     player.money -= property.GetRent();
                     property.owner.money += property.GetRent();
                 }
